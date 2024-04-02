@@ -32,7 +32,7 @@ flowchart LR
 The required tools can be installed using conda and the provided .yml environment description.
 
 ```
-conda env create -f KrakenFor16S.yml
+conda env create -f env/KrakenFor16S.yml
 ```
 
 ## Run the pipeline
@@ -46,4 +46,3 @@ Select the steps to run and specify the input and output folder.
 conda activate KrakenFor16S
 bash run_KrakenFor16S.sh
 ```
-
