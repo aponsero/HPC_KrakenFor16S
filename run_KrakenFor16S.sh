@@ -1,20 +1,7 @@
 #!/bin/bash -l
-#SBATCH --job-name=kraken2
-#SBATCH --output=outputr%j.txt
-#SBATCH --error=errors_%j.txt
-#SBATCH --partition=XXX
-#SBATCH --time=01:00:00
-#SBATCH --ntasks=1
-#SBATCH --nodes=1
-#SBATCH --cpus-per-task=5
-#SBATCH --mem-per-cpu=2000
 
 # load job configuration
-cd $SLURM_SUBMIT_DIR
 source config.sh
-export PATH="$CONDA:$PATH"
-source $CONDA/activate
-conda activate KrakenFor16S
 
 # echo for log
 echo "job started"; hostname; date
@@ -28,8 +15,7 @@ fi
 
 # Run cutadapt
 if [[ "$CUTADAPT" = "TRUE" ]]; then
-	## here add code for cutadapt
-	cutadapt -h
+	cutadapt -a $ADAPTER1 -g $ADAPTER2
 fi
 
 # Run Kraken2
