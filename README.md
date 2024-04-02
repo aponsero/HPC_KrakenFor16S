@@ -2,11 +2,7 @@
  Bash pipeline for 16S taxonomic profiling using Kraken2. Developed for NBI cluster (SLURM scheduler).
 
  ## Pipeline overview:
- The pipeline takes raw or QC'd amplicon reads and run Kraken2 and optionally Bracken for rapid taxonomic profiling. An optional merging step will parse the Kraken2/Bracken output and generate a PhyloSeq object.
-
-Note that the pipeline takes paired end files that follow the naming convention: 
-- PAIR1 = ${FILE}_R1_001.fastq.gz
-- PAIR2 = ${FILE}_R2_001.fastq.gz
+ The pipeline takes raw or QC'd amplicon reads and run Kraken2 and optionally Bracken for rapid taxonomic profiling. An optional merging step will parse the Kraken2/Bracken output and generate a PhyloSeq object. Grey steps in the workflow below are optional steps in the pipeline.
 
 ```mermaid
 flowchart LR
@@ -18,8 +14,11 @@ flowchart LR
     E -.|Merge|.-> G[PhyloSeq]
 ```
 
- ## To dos:
- 	- Add merging a parsing Bracken outputs 
+Note that the pipeline takes paired end files that follow the naming convention: 
+
+    - PAIR1 = ${FILE}_R1_001.fastq.gz
+    - PAIR2 = ${FILE}_R2_001.fastq.gz
+
 
  ## Requirements
  This pipeline requires:
