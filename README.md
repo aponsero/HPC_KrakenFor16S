@@ -16,7 +16,6 @@ flowchart LR
     C -.|Bracken|.-> E[Bracken profiles]
     D -.|Merge|.-> F[PhyloSeq]
     E -.|Merge|.-> G[PhyloSeq]
-end
 ```
 
  ## To dos:
